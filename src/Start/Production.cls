@@ -9,7 +9,7 @@ XData ProductionDefinition
   <Item Name="Start.GetKionOperation" Category="" ClassName="Start.GetKionOperation" PoolSize="1" Enabled="true" Foreground="false" Comment="外部サイトへ気温確認を行うRESTを使ったBO" LogTraceEvents="false" Schedule="">
     <Setting Target="Adapter" Name="HTTPServer">api.openweathermap.org</Setting>
     <Setting Target="Adapter" Name="URL">/data/2.5/weather</Setting>
-    <Setting Target="Host" Name="appid">c2d335870321c22878a9317fdb2cce5a</Setting>
+    <Setting Target="Host" Name="appid"></Setting>
     <Setting Target="Adapter" Name="SSLConfig">openweather</Setting>
   </Item>
   <Item Name="Start.InsertOperation" Category="" ClassName="Start.InsertOperation" PoolSize="1" Enabled="true" Foreground="false" Comment="外部サイトから取得した情報をDBへ登録するBO（アダプタ無し）" LogTraceEvents="false" Schedule="">
