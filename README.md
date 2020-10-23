@@ -66,16 +66,21 @@ http://localhost:52773/csp/sys/UtilHome.csp
 
 また、コンテナ作成時に REST 用のベース URL（/start）が設定されています。
 以下URLにアクセスしてプロダクションにデータを送信します。
+
 例）
+
 http://localhost:52773/start/weather/ちくわ/豊橋市
 
 正しく情報が送信できると、以下の文字列が表示されます。
+
 {"Message":"天気情報確認：依頼しました","Status":1}
 
 天気を取得し、データベースに登録できているかどうかは、メッセージの参照とStart.WeatherHistoryテーブルを参照して確認します。
 
 - メッセージの確認
+
 管理ポータル > [Interoperability] > [表示] > [メッセージ] を開き「ソース」欄に「Start.NonAdapterBS」が表示されている行を探し、セッション番号をクリックしてトレースを確認します。
 
 - テーブルデータの確認
+
 管理ポータル > [システムエクスプローラ] > [SQL] > ネームスぺースUSERに変更 > スキーマ：Start > テーブル：WeatherHistory > 画面右端「テーブルを開く」クリック
