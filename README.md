@@ -1,13 +1,15 @@
 # Interoperability（相互運用性）を使ってみよう
 このGitでは、InterSystems IRIS ／ InterSystems IRIS for Health の Interoperability メニューの使い方をサンプルを利用しながら確認できるコンテナを提供しています。
+
 このサンプルのコンテナは、[InterSystems IRIS Community Editionのイメージ](https://hub.docker.com/_/intersystems-iris-data-platform)を使用しています（Pullできない場合はイメージ、タグ名をご確認ください）。
+
 [Intersystems IRIS for Health の Community Edition のイメージ](https://hub.docker.com/_/intersystems-iris-for-health)もあります。お好みでイメージを切り替えてご利用ください。
 
 この他、JDBCでの接続が行えるように OpenJDK もインストールしています。
 詳細は、[Dockerfile](./Dockerfile) をご参照ください。
 
 
-## [コミュニティ](https://jp.community.intersystems.com)にサンプルについての解説を記述しています。
+## [開発者コミュニティ](https://jp.community.intersystems.com)にサンプルについての解説を記述しています。
 索引ページ：https://jp.community.intersystems.com/node/483021
 
 
@@ -17,7 +19,7 @@
 
 |種別|ファイル|説明|
 |:--|:--|:--|
-|ビジネス・サービス|[FileBS.cls](/src/Start/FileBs.cls)|ファイルインバウンドアダプタを利用したビジネス・サービスクラス|
+|ビジネス・サービス|[FileBS.cls](/src/Start/FileBS.cls)|ファイルインバウンドアダプタを利用したビジネス・サービスクラス|
 |ビジネス・サービス|[WebServiceBS.cls](/src/Start/WS/WebServiceBS.cls)|Webサービス用のビジネス・サービスクラス|
 |ビジネス・サービス|[NonAdapterBS.cls](/src/Start/NonAdapterBS.cls)|アダプタを使用しないビジネス・サービスクラス（ストアドプロシージャ／RESTから呼び出すときに使用する）|
 |ビジネス・プロセス|[WeatherCheckProcess.cls](/src/Start/WeatherCheckProcess.cls)|お天気APIとデータベースの更新処理を順序を守って実行するビジネス・プロセスクラス|
@@ -72,8 +74,8 @@ http://localhost:52773/start/weather/ちくわ/豊橋市
 
 天気を取得し、データベースに登録できているかどうかは、メッセージの参照とStart.WeatherHistoryテーブルを参照して確認します。
 
-メッセージの確認：
+- メッセージの確認
 管理ポータル > [Interoperability] > [表示] > [メッセージ] を開き「ソース」欄に「Start.NonAdapterBS」が表示されている行を探し、セッション番号をクリックしてトレースを確認します。
 
-テーブルデータの確認：
+- テーブルデータの確認
 管理ポータル > [システムエクスプローラ] > [SQL] > ネームスぺースUSERに変更 > スキーマ：Start > テーブル：WeatherHistory > 画面右端「テーブルを開く」クリック
