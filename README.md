@@ -8,6 +8,10 @@
 この他、JDBCでの接続が行えるように OpenJDK もインストールしています。
 詳細は、[Dockerfile](./Dockerfile) をご参照ください。
 
+サンプルコードの中では、天気の情報を取得するため [OpenWeather](https://openweathermap.org/current) の Web API を使用しています。
+
+この API を実行するためには事前にアカウントを登録し API key を取得する必要があります。お試しいただく前に、[こちらのページ](https://home.openweathermap.org/api_keys) で API key を取得してください。サンプルコードへの設定方法については後述します。
+
 
 ## [開発者コミュニティ](https://jp.community.intersystems.com)にサンプルについての解説を記述しています。
 索引ページ：https://jp.community.intersystems.com/node/483021
@@ -64,6 +68,10 @@ http://localhost:52773/csp/sys/UtilHome.csp
 管理ポータル > [Interoperability] > [構成] > [プロダクション] を開きます。
 
 （コンテナ作成時にプロダクション：Start.Production を自動起動する設定としているためプロダクションは開始しています）
+
+事前に取得した OpenWeather の API key を ビジネス・オペレーション：Start.GetKionOperation の 設定タブにある [OpenWeatherMap] > [appid] の欄に設定します。
+
+![appidの設定](/HowToSetAPPID.gif)
 
 また、コンテナ作成時に REST 用のベース URL（/start）が設定されています。
 以下URLにアクセスしてプロダクションにデータを送信します。

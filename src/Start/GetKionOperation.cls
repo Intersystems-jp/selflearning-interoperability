@@ -13,7 +13,7 @@ Property appid As %String;
 Parameter SETTINGS = "appid:OpenWeatherMap";
 
 /// お天気APIを利用
-/// 例）https://api.openweathermap.org/data/2.5/weather?appid=c2d335870321c22878a9317fdb2cce5a&units=metric&q=国分寺市&lang=ja
+/// 例）https://api.openweathermap.org/data/2.5/weather?appid=ここに正しいappidを指定&units=metric&q=長野市&lang=ja
 /// https://openweathermap.org/current
 /// クエリパラメータの units（units=metic は摂氏で返送）と lang（lang=ja）はコードで設定
 /// クエリパラメータの q は調べる天気の地名やコード
