@@ -60,7 +60,7 @@ $ docker-compose up -d
 $ docker-compose stop
 ```
 
-## プロダクションのデータを送信してみる
+## プロダクションにデータを送信してみる
 コンテナ開始後、以下のURLにアクセスします。ユーザ名（_system）とパスワード（SYS）を指定してログインします。
 
 http://localhost:52773/csp/sys/UtilHome.csp
