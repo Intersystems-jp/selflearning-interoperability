@@ -19,7 +19,7 @@ Parameter SETTINGS = "appid:OpenWeatherMap";
 /// クエリパラメータの q は調べる天気の地名やコード
 /// 	Osakaまたは大阪市、Tokyoまたは東京都、Shinjukuまたは新宿区など
 /// 	国コードでも指定可　https://ja.wikipedia.org/wiki/ISO_3166-1
-/// apiidは事前に取得する必要有
+/// appidは事前に取得する必要有
 /// HTTP応答の　dt には Unix UTCの時間
 Method GetKion(pRequest As Start.Request, Output pResponse As Start.Response) As %Status
 {
@@ -28,7 +28,6 @@ Method GetKion(pRequest As Start.Request, Output pResponse As Start.Response) As
 	set st=$$$OK
 	try {
 		set queryparameter="?units=metric&lang=ja&q="_pRequest.Area_"&appid="_..appid
-		//set queryparameter="?units=metric&lang=ja&q="_pRequest.Area_"&appid=c2d335870321c22878a9317fdb2cce5a"
 		set URL=..Adapter.URL_queryparameter
 		$$$TRACE(URL)
 		set st=..Adapter.GetURL(URL,.tHttpResponse)
