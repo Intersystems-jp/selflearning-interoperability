@@ -14,14 +14,14 @@ Parameter USECLASSNAMESPACES = 1;
 
 /// TODO: 引数および実装を追加します。
 /// CallEnsemble
-/// 　第1引数：購入商品名／第2引数：エリアコード（デフォルトで長野県長野市のエリアコードを指定してます）
-Method CallEnsemble(product As %String, AreCode As %Numeric = 200010) As %Status [ WebMethod ]
+/// 　第1引数：購入商品名／第2引数：都市名
+Method CallEnsemble(product As %String, Are As %String = "長野市") As %Status [ WebMethod ]
 {
 	#dim ex As %Exception.AbstractException
 	set st=$$$OK
 	try {
 		set request=##class(Start.Request).%New()
-		set request.Area=AreCode
+		set request.Area=Are
 		set request.Product=product
 		set st=..SendRequestAsync("Start.WeatherCheckProcess",request)
 		$$$THROWONERROR(ex,st)

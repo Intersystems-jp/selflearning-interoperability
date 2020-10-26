@@ -2,7 +2,7 @@ Class Start.Utils
 {
 
 /// ストアドプロシージャ／クラスメソッドからアダプタ無しのBSを呼ぶ例
-ClassMethod CallEnsemble(product As %String, areacode As %String) As %Status [ SqlProc ]
+ClassMethod CallProduction(product As %String, areacode As %String) As %Status [ SqlProc ]
 {
 	#dim %sqlcontext As %Library.ProcedureContext
 	#dim ex As %Exception.AbstractException
