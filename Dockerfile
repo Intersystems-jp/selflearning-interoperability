@@ -1,6 +1,4 @@
 #イメージのタグはこちら（https://hub.docker.com/_/intersystems-iris-data-platform）でご確認ください
-ARG IMAGE=store/intersystems/iris-community:2020.1.0.215.0
-ARG IMAGE=store/intersystems/iris-community:2020.2.0.211.0
 ARG IMAGE=store/intersystems/iris-community:2020.4.0.521.0
 ARG IMAGE=store/intersystems/iris-community:2020.3.0.221.0
 FROM $IMAGE
