@@ -9,8 +9,10 @@ Parameter INVOCATION = "Queue";
 
 /// APIキーを指定します
 Property appid As %String;
+/// お天気APIの返送データの言語を指定します。（日本語は ja）
+Property lang As %String [ InitialExpression = "ja" ];
 
-Parameter SETTINGS = "appid:OpenWeatherMap";
+Parameter SETTINGS = "lang:OpenWeatherMap,appid:OpenWeatherMap";
 
 /// お天気APIを利用
 /// 例）https://api.openweathermap.org/data/2.5/weather?appid=ここに正しいappidを指定&units=metric&q=長野市&lang=ja
@@ -27,7 +29,7 @@ Method GetKion(pRequest As Start.Request, Output pResponse As Start.Response) As
 	#dim tHttpResponse As %Net.HttpResponse
 	set st=$$$OK
 	try {
-		set queryparameter="?units=metric&lang=ja&q="_pRequest.Area_"&appid="_..appid
+		set queryparameter="?units=metric&q="_pRequest.Area_"&appid="_..appid_"&lang="_..lang
 		set URL=..Adapter.URL_queryparameter
 		$$$TRACE(URL)
 		set st=..Adapter.GetURL(URL,.tHttpResponse)
