@@ -1,0 +1,10 @@
+//システム設定変更のため %SYSネームスペースに移動
+set $namespace="%SYS"
+// 事前定義ユーザのパスワードを無期限に設定する（デフォルトパスワードはSYS）
+Do ##class(Security.Users).UnExpireUserPasswords("*")
+// 日本語ロケールに変更（コンテナがUbuntu英語版のためデフォルトは英語ロケール）を利用
+Do ##class(Config.NLS.Locales).Install("jpuw")
+
+// ソースコードインポートと初期設定実行
+Do $system.OBJ.Load("/irisdev/src/Installer.cls","ck")
+set tSC=##class(ZSelflearning.Installer).RunInstall("/irisdev/src")
