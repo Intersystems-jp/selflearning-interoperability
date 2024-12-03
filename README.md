@@ -1,12 +1,9 @@
 # Interoperability（相互運用性）を使ってみよう
 このGitでは、InterSystems IRIS ／ InterSystems IRIS for Health の Interoperability メニューの使い方をサンプルを利用しながら確認できるコンテナを提供しています。
 
-このサンプルのコンテナは、[InterSystems IRIS Community Editionのイメージ](https://hub.docker.com/_/intersystems-iris-data-platform)を使用しています（Pullできない場合はイメージ、タグ名をご確認ください）。
+このサンプルのコンテナは、[InterSystems IRIS Community Editionのイメージ](https://container.intersystems.com/contents?family=InterSystems%20IRIS%20Community%20Edition&product=iris-community&version=latest-cd)を使用しています（Pullできない場合はイメージ、タグ名をご確認ください）。
 
-[Intersystems IRIS for Health の Community Edition のイメージ](https://hub.docker.com/_/intersystems-iris-for-health)もあります。お好みでイメージを切り替えてご利用ください。
-
-この他、JDBCでの接続が行えるように OpenJDK もインストールしています。
-詳細は、[Dockerfile](./Dockerfile) をご参照ください。
+[Intersystems IRIS for Health の Community Edition のイメージ](https://container.intersystems.com/contents?family=InterSystems%20IRIS%20Community%20Edition&product=iris-ml-community&version=latest-em)もあります。お好みでイメージを切り替えてご利用ください。
 
 サンプルコードの中では、天気の情報を取得するため [OpenWeather](https://openweathermap.org/current) の Web API を使用しています。
 
@@ -14,7 +11,7 @@
 
 
 ## [開発者コミュニティ](https://jp.community.intersystems.com)にサンプルについての解説を記述しています。
-索引ページ：https://jp.community.intersystems.com/node/483021
+索引ページ：[【はじめてのInterSystems IRIS】Interoperability（相互運用性）を使ってみよう！](https://jp.community.intersystems.com/node/483021)
 
 
 
@@ -63,7 +60,7 @@ $ docker-compose stop
 ## プロダクションにデータを送信してみる
 コンテナ開始後、以下のURLにアクセスします。ユーザ名（_system）とパスワード（SYS）を指定してログインします。
 
-http://localhost:52773/csp/sys/UtilHome.csp
+[管理ポータルトップ](http://localhost:52773/csp/sys/UtilHome.csp)
 
 管理ポータル > [Interoperability] > [構成] > [プロダクション] を開きます。
 
